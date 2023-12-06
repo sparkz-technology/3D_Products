@@ -1,4 +1,4 @@
-import Canvas from './canvas/Canvas'
+import CanvasModal from './canvas/CanvasModal'
 import Customizer from './pages/Customizer'
 import Home from './pages/Home'
 
@@ -6,7 +6,7 @@ const App: React.FC = () => {
   return (
     <main className='app transition-all ease-in'>
       <Home />
-      <Canvas />
+      <CanvasModal />
       <Customizer />
     </main>
   )

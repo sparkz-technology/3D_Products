@@ -1,2 +1,2 @@
-export { default as shirt_baked_scene } from './shirt_baked_scene.glb'
-export { default as shirt_hoodies_scene } from './shirt_baked_scene.glb'
+export { default as shirt_baked_scene } from './shirt_baked.glb'
+export { default as shirt_baked_scene2 } from './man_shirt.glb'

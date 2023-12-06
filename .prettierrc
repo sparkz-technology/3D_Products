@@ -2,10 +2,5 @@
   "semi": false,
   "singleQuote": true,
   "jsxSingleQuote": true,
-  "trailingComma": "all",
-  "printWidth": 80,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindcss": {
-    "maxLineLength": 80
-  }
+  "trailingComma": "all"
 }
