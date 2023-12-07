@@ -13,24 +13,22 @@ const ShirtBaked: React.FC = (props) => {
   const { nodes, materials } = useGLTF(shirt_baked_scene)
   const shirtMesh = nodes.T_Shirt_male as THREE.Mesh
   const lambertMaterial = materials.lambert1 as THREE.MeshLambertMaterial
-  useFrame((state) =>
-    easing.dampC(
-      lambertMaterial.color,
-      snap.color,
-      0.25,
-      state.clock.getDelta(),
-    ),
+
+  useFrame((_, delta) =>
+    easing.dampC(lambertMaterial.color, snap.color, 0.25, delta),
   )
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} visible={snap.currentModel ? true : false}>
       <mesh
         castShadow
         receiveShadow
+        material={materials.lambert1}
         geometry={shirtMesh.geometry}
         material-roughness={1}
       />
     </group>
   )
 }
-
+useGLTF.preload(shirt_baked_scene)
 export default ShirtBaked

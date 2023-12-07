@@ -1,9 +1,9 @@
 import { Canvas } from '@react-three/fiber'
 import ShirtBaked from '../scene/ShirtBaked'
-import { Center, Environment } from '@react-three/drei'
+import ShirtFormal from '../scene/ShirtFormal'
 import CameraRig from './CameraRig'
 import Backdrop from './Backdrop'
-import ShirtHoodie from '../scene/ShirtHoodie'
+import { Center, Environment } from '@react-three/drei'
 
 const CanvasModal: React.FC = () => {
   return (
@@ -18,8 +18,10 @@ const CanvasModal: React.FC = () => {
       <CameraRig>
         <Backdrop />
         <Center>
-          {/* <ShirtBaked /> */}
-          <ShirtHoodie />
+          <ShirtFormal />
+        </Center>
+        <Center>
+          <ShirtBaked />
         </Center>
       </CameraRig>
     </Canvas>

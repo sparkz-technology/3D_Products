@@ -1,40 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { swatch, fileIcon, ai, logoShirt, stylishShirt } from '../assets'
+import { shirt_baked, shirt_formal } from '../assets/image'
 
-export const EditorTabs = [
+export const models = [
   {
-    name: 'colorpicker',
-    icon: swatch,
+    name: 'shirt_formal',
+    img: shirt_formal,
   },
   {
-    name: 'filepicker',
-    icon: fileIcon,
-  },
-  {
-    name: 'aipicker',
-    icon: ai,
+    name: 'shirt_baked',
+    img: shirt_baked,
   },
 ]
-
-export const FilterTabs = [
-  {
-    name: 'logoShirt',
-    icon: logoShirt,
-  },
-  {
-    name: 'stylishShirt',
-    icon: stylishShirt,
-  },
-]
-
-export const DecalTypes = {
-  logo: {
-    stateProperty: 'logoDecal',
-    filterTab: 'logoShirt',
-  },
-  full: {
-    stateProperty: 'fullDecal',
-    filterTab: 'stylishShirt',
-  },
-}
