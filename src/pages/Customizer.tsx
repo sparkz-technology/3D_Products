@@ -25,6 +25,7 @@ const Customizer: React.FC = () => {
       link.click()
     }
   }
+
   return (
     <>
       <AnimatePresence>
@@ -36,7 +37,7 @@ const Customizer: React.FC = () => {
               key='custom'
               className='absolute bottom-20 right-5 z-10 flex flex-col gap-2.5 overflow-x-auto 
               md:bottom-5   md:left-3  md:flex-row   '
-              {...slideAnimation('down')}
+              {...slideAnimation(window.innerWidth > 768 ? 'down' : 'right')}
             >
               {snap.colors.map((color) => (
                 <motion.div
