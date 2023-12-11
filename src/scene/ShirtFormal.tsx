@@ -49,7 +49,7 @@ const ShirtFormal: React.FC = () => {
       dispose={null}
       position={[0, 2, -5]}
       scale={[0.01, 0.01, 0.01]}
-      visible={!snap.currentModel ? true : false}
+      visible={snap.currentModel === 'shirt_formal'}
     >
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh

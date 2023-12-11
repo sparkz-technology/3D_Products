@@ -19,7 +19,11 @@ const ShirtBaked: React.FC = (props) => {
   )
 
   return (
-    <group {...props} dispose={null} visible={snap.currentModel ? true : false}>
+    <group
+      {...props}
+      dispose={null}
+      visible={snap.currentModel === 'shirt_baked'}
+    >
       <mesh
         castShadow
         receiveShadow

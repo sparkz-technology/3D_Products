@@ -57,22 +57,31 @@ const Customizer: React.FC = () => {
                 />
               </motion.div>
               {models.map((model) => (
-                <motion.div
+                <motion.button
                   key={model.name}
-                  className='w-10 h-10 rounded-full cursor-pointer border-3 border-black'
-                  {...slideAnimation('up')}
-                  style={{ color: snap.color, borderColor: snap.color }}
-                  onClick={() =>
-                    (state.currentModel =
-                      state.currentModel === true ? false : true)
-                  }
+                  className='font-bold text-sm
+                   cursor-pointer border-2
+                   disabled:opacity-50 disabled:cursor-not-allowed  
+                  '
+                  style={{
+                    color: snap.color,
+                    borderColor: snap.color,
+                    background:
+                      model.name === snap.currentModel ? snap.color : '',
+                  }}
+                  onClick={() => (state.currentModel = model.name)}
+                  disabled={model.name === snap.currentModel}
                 >
                   <img
                     src={model.img}
-                    alt={model.name}
-                    className='w-full h-full object-contain'
+                    className={`${
+                      model.name === snap.currentModel
+                        ? 'cursor-not-allowed  '
+                        : 'cursor-pointer'
+                    } rounded-full w-10 h-10 `}
+                    draggable={false}
                   />
-                </motion.div>
+                </motion.button>
               ))}
             </motion.div>
             //!

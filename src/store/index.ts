@@ -8,7 +8,7 @@ const state = proxy({
   isFullTexture: false,
   logoDecal: './Threejs.png',
   fullDecal: './Threejs.png',
-  currentModel: true,
+  currentModel: 'shirt_baked',
   colors: ['#ccc', '#726DE8', '#EF674E', '#353934'],
 })
 
