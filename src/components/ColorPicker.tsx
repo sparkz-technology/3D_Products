@@ -6,7 +6,10 @@ const ColorPicker: React.FC = () => {
   const snap = useSnapshot(state)
 
   return (
-    <div className='absolute left-full ml-3'>
+    <div
+      className='absolute w-10 h-10 rounded-full left-0 top-0
+     cursor-pointer border-3 border-black'
+    >
       <SketchPicker
         color={snap.color}
         disableAlpha
