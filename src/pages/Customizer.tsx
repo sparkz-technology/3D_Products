@@ -5,12 +5,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { slideAnimation } from '../config/motion'
 import { models } from '../config/constants'
 import ColorPicker from '../components/ColorPicker'
-import { useState } from 'react'
 import { colorPicker } from '../assets/image'
 
 const Customizer: React.FC = () => {
   const snap = useSnapshot(state)
-  const [showColorPicker, setShowColorPicker] = useState(false)
+  // const [showColorPicker, setShowColorPicker] = useState(false)
   const handleDownload = () => {
     const link = document.createElement('a')
     link.setAttribute('download', 'canvas.png')
@@ -31,7 +30,7 @@ const Customizer: React.FC = () => {
       <AnimatePresence>
         {!snap.intro && (
           <>
-            {showColorPicker && <ColorPicker />}
+            {snap.colorPickerOpen && <ColorPicker />}
             //!
             <motion.div
               key='custom'
@@ -49,7 +48,7 @@ const Customizer: React.FC = () => {
               ))}
               <motion.div
                 className='w-10 h-10 rounded-full cursor-pointer'
-                onClick={() => setShowColorPicker(!showColorPicker)}
+                onClick={() => (state.colorPickerOpen = !snap.colorPickerOpen)}
               >
                 <img
                   src={colorPicker}

@@ -13,9 +13,22 @@ const ShirtBaked: React.FC = (props) => {
   const { nodes, materials } = useGLTF(shirt_baked_scene)
   const lambertMaterial = materials.lambert1 as THREE.MeshLambertMaterial
 
-  useFrame((_, delta) =>
-    easing.dampC(lambertMaterial.color, snap.color, 0.25, delta),
-  )
+  useFrame((_, delta) => {
+    const isVisible = snap.currentModel === 'shirt_baked'
+
+    easing.dampC(lambertMaterial.color, snap.color, 0.25, delta)
+    //  animation when the visibility changes
+    if (!isVisible) {
+      // Move the model to the right (adjust the value as needed)
+      nodes.T_Shirt_male.position.x += 0.1
+
+      // Set visibility to false
+      nodes.T_Shirt_male.visible = false
+    } else {
+      // Set visibility to true when the model is visible
+      nodes.T_Shirt_male.visible = true
+    }
+  })
 
   return (
     <group

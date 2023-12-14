@@ -10,6 +10,7 @@ const state = proxy({
   fullDecal: './Threejs.png',
   currentModel: 'shirt_baked',
   colors: ['#ccc', '#726DE8', '#EF674E', '#353934'],
+  colorPickerOpen: false,
 })
 
 export default state
